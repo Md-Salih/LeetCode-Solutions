@@ -1,38 +1,55 @@
 class Solution {
 public:
-    static const int MOD = 1e9 + 7;
-
-    // Compute sum of subtree rooted at node
-    long long subtreeSum(TreeNode* root) {
-        if (!root) return 0;
-        return root->val + subtreeSum(root->left) + subtreeSum(root->right);
-    }
-
-    long long totalSum(TreeNode* root) {
-        if (!root) return 0;
-        return root->val + totalSum(root->left) + totalSum(root->right);
-    }
-
-    void dfs(TreeNode* node, TreeNode* root, long long total, long long& ans) {
-        if (!node) return;
-
-        // skip root because we cannot cut above it
-        if (node != root) {
-            long long sub = subtreeSum(node);
-            long long product = sub * (total - sub);
-            ans = max(ans, product);
-        }
-
-        dfs(node->left, root, total, ans);
-        dfs(node->right, root, total, ans);
-    }
-
     int maxProduct(TreeNode* root) {
-        long long total = totalSum(root);
-        long long ans = 0;
-
-        dfs(root, root, total, ans);
-
-        return ans % MOD;
+        using ll = long long;
+      
+        // Constants
+        const int MOD = 1e9 + 7;
+      
+        // Variable to store the maximum product
+        ll maxProductValue = 0;
+      
+        // Lambda function to calculate the sum of all nodes in the tree
+        function<ll(TreeNode*)> calculateTotalSum = [&](TreeNode* node) -> ll {
+            // Base case: empty node
+            if (!node) {
+                return 0;
+            }
+          
+            // Recursive case: current node value + sum of left subtree + sum of right subtree
+            return node->val + calculateTotalSum(node->left) + calculateTotalSum(node->right);
+        };
+      
+        // Calculate the total sum of all nodes in the tree
+        ll totalSum = calculateTotalSum(root);
+      
+        // Lambda function to traverse the tree and find the maximum product
+        // Returns the sum of the subtree rooted at the current node
+        function<ll(TreeNode*)> findMaxProduct = [&](TreeNode* node) -> ll {
+            // Base case: empty node
+            if (!node) {
+                return 0;
+            }
+          
+            // Calculate the sum of the current subtree
+            ll currentSubtreeSum = node->val + findMaxProduct(node->left) + findMaxProduct(node->right);
+          
+            // Check if we can split the tree at this edge
+            // Only consider valid splits (subtree sum < total sum)
+            if (currentSubtreeSum < totalSum) {
+                // Calculate the product of the two parts after splitting
+                // Part 1: currentSubtreeSum
+                // Part 2: (totalSum - currentSubtreeSum)
+                ll product = currentSubtreeSum * (totalSum - currentSubtreeSum);
+                maxProductValue = max(maxProductValue, product);
+            }
+          
+            return currentSubtreeSum;
+        };
+        // Traverse the tree to find the maximum product
+        findMaxProduct(root);
+      
+        // Return the result modulo MOD
+        return maxProductValue % MOD;
     }
 };
