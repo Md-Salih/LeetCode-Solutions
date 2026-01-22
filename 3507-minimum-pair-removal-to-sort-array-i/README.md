@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/minimum-pair-removal-to-sort-array-i/?envType=daily-question&envId=2026-01-22">3507. Minimum Pair Removal to Sort Array I</a></h2><h3>Easy</h3><hr><p>Given an array <code>nums</code>, you can perform the following operation any number of times:</p>
+<h2><a href="https://leetcode.com/problems/minimum-pair-removal-to-sort-array-i">3507. Minimum Pair Removal to Sort Array I</a></h2><h3>Easy</h3><hr><p>Given an array <code>nums</code>, you can perform the following operation any number of times:</p>
 
 <ul>
 	<li>Select the <strong>adjacent</strong> pair with the <strong>minimum</strong> sum in <code>nums</code>. If multiple such pairs exist, choose the leftmost one.</li>
