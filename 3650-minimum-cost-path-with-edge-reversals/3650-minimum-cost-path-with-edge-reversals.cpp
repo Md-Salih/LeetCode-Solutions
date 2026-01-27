@@ -1,40 +1,56 @@
+// with packing data into uint64
+using u16 = unsigned short;
+using u64 = unsigned long long;
+using info = pair<unsigned, u16>; // (distance, vertex)
+
+const int N = 50000;
+vector<u64> adj[N];
+unsigned dist[N];
+
 class Solution {
 public:
-    int minCost(int n, vector<vector<int>>& edges) {
-        map<int, vector<vector<int>>> m;
+    static inline u64 pack(int w, int v) { return ((u64)w << 16) | v; }
+    static inline void build_adj(int n, vector<vector<int>>& edges) {
+        for (int i = 0; i < n; i++)
+            adj[i].clear();
 
-        // Build graph
-        for (auto i : edges) {
-            m[i[0]].push_back({i[2], i[1]});        // forward edge
-            m[i[1]].push_back({2 * i[2], i[0]});    // reverse edge
+        for (const auto& e : edges) {
+            int w = e[2], u = e[0], v = e[1];
+            adj[u].push_back(pack(w, v));     // normal edge
+            adj[v].push_back(pack(2 * w, u)); // reversed edge
         }
+    }
 
-        priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
-        vector<int> dist(n, INT_MAX);
+    static int minCost(int n, vector<vector<int>>& edges) {
+        build_adj(n, edges);
 
-        pq.push({0, 0});
+        priority_queue<u64, vector<u64>, greater<>> pq;
+
+        memset(dist, 255, sizeof(unsigned) * n); // fill with UINT_MAX
+
         dist[0] = 0;
+        pq.emplace(0);
 
         while (!pq.empty()) {
-            auto temp = pq.top();
+            u64 data = pq.top();
+            int d = data >> 16, u = data & USHRT_MAX;
             pq.pop();
 
-            int currDist = temp[0];
-            int u = temp[1];
+            if (d > dist[u])
+                continue;
+            if (u == n - 1)
+                return d;
 
-            if (currDist > dist[u]) continue;
+            for (auto& wv : adj[u]) {
+                int w = wv >> 16, v = wv & USHRT_MAX;
+                unsigned d2 = d + w;
 
-            for (auto &i : m[u]) {
-                int d = i[0];
-                int v = i[1];
-
-                if (dist[v] > currDist + d) {
-                    dist[v] = currDist + d;
-                    pq.push({dist[v], v});
+                if (d2 < dist[v]) {
+                    dist[v] = d2;
+                    pq.push(pack(d2, v));
                 }
             }
         }
-
-        return dist[n - 1] == INT_MAX ? -1 : dist[n - 1];
+        return -1;
     }
 };
