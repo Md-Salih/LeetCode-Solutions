@@ -4,10 +4,10 @@ public:
         int m = grid.size(), n = grid[0].size();
 
         long long total = 0;
-        unordered_map<long long,int> bottomMap,topMap, leftMap, rightMap;
+        unordered_map<long long, int> bottomMap, topMap, leftMap, rightMap;
 
         // Initialize bottomMap and rightMap
-        for (auto &row : grid) {
+        for (auto& row : grid) {
             for (int x : row) {
                 total += x;
                 bottomMap[x]++;
@@ -29,14 +29,17 @@ public:
 
             long long sumBottom = total - sumTop;
 
-            if (sumTop == sumBottom) return true;
+            if (sumTop == sumBottom)
+                return true;
 
             long long diff = abs(sumTop - sumBottom);
 
             if (sumTop > sumBottom) {
-                if (check(topMap, grid, 0, i, 0, n-1, diff)) return true;
+                if (check(topMap, grid, 0, i, 0, n - 1, diff))
+                    return true;
             } else {
-                if (check(bottomMap, grid, i+1, m-1, 0, n-1, diff)) return true;
+                if (check(bottomMap, grid, i + 1, m - 1, 0, n - 1, diff))
+                    return true;
             }
         }
 
@@ -51,28 +54,32 @@ public:
             }
 
             long long sumRight = total - sumLeft;
-            if (sumLeft == sumRight) return true;
+            if (sumLeft == sumRight)
+                return true;
 
             long long diff = abs(sumLeft - sumRight);
 
             if (sumLeft > sumRight) {
-                if (check(leftMap, grid, 0, m-1, 0, j, diff)) return true;
+                if (check(leftMap, grid, 0, m - 1, 0, j, diff))
+                    return true;
             } else {
-                if (check(rightMap, grid, 0, m-1, j+1, n-1, diff)) return true;
+                if (check(rightMap, grid, 0, m - 1, j + 1, n - 1, diff))
+                    return true;
             }
         }
 
         return false;
     }
 
-    bool check(unordered_map<long long,int>& mp, vector<vector<int>>& grid,
-           int r1, int r2, int c1, int c2, long long diff) {
+    bool check(unordered_map<long long, int>& mp, vector<vector<int>>& grid,
+               int r1, int r2, int c1, int c2, long long diff) {
 
         int rows = r2 - r1 + 1;
         int cols = c2 - c1 + 1;
 
         // single cell
-        if (rows * cols == 1) return false;
+        if (rows * cols == 1)
+            return false;
 
         // 1D row
         if (rows == 1) {
@@ -84,6 +91,6 @@ public:
             return (grid[r1][c1] == diff || grid[r2][c1] == diff);
         }
 
-        return mp[diff]>0;
+        return mp[diff] > 0;
     }
 };
