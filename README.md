@@ -48,6 +48,7 @@ Daily Challenges
 | [3043-find-the-length-of-the-longest-common-prefix](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3043-find-the-length-of-the-longest-common-prefix/) | Medium |
 | [3070-count-submatrices-with-top-left-element-and-sum-less-than-k](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3070-count-submatrices-with-top-left-element-and-sum-less-than-k/) | Medium |
 | [3093-longest-common-suffix-queries](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3093-longest-common-suffix-queries) |
+| [3161-block-placement-queries](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3161-block-placement-queries) |
 | [3212-count-submatrices-with-equal-frequency-of-x-and-y](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3212-count-submatrices-with-equal-frequency-of-x-and-y/) | Medium |
 | [3225-maximum-score-from-grid-operations](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3225-maximum-score-from-grid-operations/) | Hard |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
@@ -219,6 +220,7 @@ Daily Challenges
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/0153-find-minimum-in-rotated-sorted-array/) | Medium |
 | [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+| [3161-block-placement-queries](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3161-block-placement-queries) |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
 | [3488-closest-equal-element-queries](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3488-closest-equal-element-queries/) | Medium |
@@ -270,6 +272,7 @@ Daily Challenges
 |  |
 | ------- |
 | [1622-fancy-sequence](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/1622-fancy-sequence/) | Hard |
+| [3161-block-placement-queries](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3161-block-placement-queries) |
 ## Sorting
 |  |
 | ------- |
@@ -342,4 +345,8 @@ Daily Challenges
 |  |
 | ------- |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
+## Binary Indexed Tree
+|  |
+| ------- |
+| [3161-block-placement-queries](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3161-block-placement-queries) |
 <!---LeetCode Topics End-->
