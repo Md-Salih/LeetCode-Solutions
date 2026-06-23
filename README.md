@@ -196,6 +196,7 @@ Daily Challenges
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3559-number-of-ways-to-assign-edge-weights-ii](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3559-number-of-ways-to-assign-edge-weights-ii) |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
+| [3699-number-of-zigzag-arrays-i](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3699-number-of-zigzag-arrays-i) |
 | [3742-maximum-path-score-in-a-grid](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3742-maximum-path-score-in-a-grid/) | Medium |
 | [3751-total-waviness-of-numbers-in-range-i](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3751-total-waviness-of-numbers-in-range-i) |
 | [3753-total-waviness-of-numbers-in-range-ii](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3753-total-waviness-of-numbers-in-range-ii) |
@@ -246,6 +247,7 @@ Daily Challenges
 | [3225-maximum-score-from-grid-operations](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3225-maximum-score-from-grid-operations/) | Hard |
 | [3546-equal-sum-grid-partition-i](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/Md-Salih/LeetCode-Solutions/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
+| [3699-number-of-zigzag-arrays-i](https://github.com/Md-Salih/LeetCode-Solutions/tree/master/3699-number-of-zigzag-arrays-i) |
 ## Bit Manipulation
 |  |
 | ------- |
